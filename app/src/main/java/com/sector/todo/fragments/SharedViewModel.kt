@@ -14,7 +14,7 @@ import com.sector.todo.data.models.ToDoData
 
 class SharedViewModel(application: Application): AndroidViewModel(application) {
 
-    val emptyDatabase: MutableLiveData<Boolean> = MutableLiveData(true)
+    val emptyDatabase: MutableLiveData<Boolean> = MutableLiveData(false) // we set False because in a blink of a second we can see Image and Text (No data) if our data is not empty, this method solves the problem
 
     fun checkIfDatabaseEmpty(toDoData: List<ToDoData>) {
         emptyDatabase.value = toDoData.isEmpty()
@@ -56,14 +56,6 @@ class SharedViewModel(application: Application): AndroidViewModel(application) {
             "Medium Priority" -> { Priority.MEDIUM}
             "Low Priority" -> { Priority.LOW}
             else -> Priority.LOW
-        }
-    }
-
-    fun parsePriorityToInt(priority: Priority): Int {
-        return when(priority) {
-            Priority.HIGH -> 0
-            Priority.MEDIUM -> 1
-            Priority.LOW -> 2
         }
     }
 }
