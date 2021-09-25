@@ -6,10 +6,12 @@
         <entry key="..\:/Users/nqwis/AndroidStudioProjects/ToDo/app/src/main/res/drawable/custom_input.xml" value="0.1" />
         <entry key="..\:/Users/nqwis/AndroidStudioProjects/ToDo/app/src/main/res/drawable/ic_add.xml" value="0.20555555555555555" />
         <entry key="..\:/Users/nqwis/AndroidStudioProjects/ToDo/app/src/main/res/drawable/ic_no_data.xml" value="0.20185185185185187" />
+        <entry key="..\:/Users/nqwis/AndroidStudioProjects/ToDo/app/src/main/res/drawable/item_background.xml" value="0.16574074074074074" />
         <entry key="..\:/Users/nqwis/AndroidStudioProjects/ToDo/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/nqwis/AndroidStudioProjects/ToDo/app/src/main/res/layout/fragment_add.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/nqwis/AndroidStudioProjects/ToDo/app/src/main/res/layout/fragment_list.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/nqwis/AndroidStudioProjects/ToDo/app/src/main/res/layout/fragment_update.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/nqwis/AndroidStudioProjects/ToDo/app/src/main/res/layout/row_layout.xml" value="0.264" />
         <entry key="..\:/Users/nqwis/AndroidStudioProjects/ToDo/app/src/main/res/menu/fragment_add_menu.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/nqwis/AndroidStudioProjects/ToDo/app/src/main/res/menu/fragment_list_menu.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/nqwis/AndroidStudioProjects/ToDo/app/src/main/res/menu/fragment_update_menu.xml" value="0.2526041666666667" />
