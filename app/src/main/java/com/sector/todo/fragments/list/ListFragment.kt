@@ -16,6 +16,7 @@ import com.sector.todo.data.viewmodel.ToDoViewModel
 import com.sector.todo.databinding.FragmentListBinding
 import com.sector.todo.fragments.SharedViewModel
 import com.sector.todo.fragments.list.adapter.ListAdapter
+import com.sector.todo.utils.hideKeyboard
 import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
 
 class ListFragment : Fragment(), SearchView.OnQueryTextListener {
@@ -40,6 +41,9 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
 
         // Setup RecyclerView
         setupRecyclerView()
+
+        // Hide soft keyboard
+        hideKeyboard(requireActivity())
 
         return binding.root
     }
