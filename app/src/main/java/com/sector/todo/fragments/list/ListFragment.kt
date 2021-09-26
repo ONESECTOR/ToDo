@@ -17,6 +17,7 @@ import com.sector.todo.databinding.FragmentListBinding
 import com.sector.todo.fragments.SharedViewModel
 import com.sector.todo.fragments.list.adapter.ListAdapter
 import com.sector.todo.utils.hideKeyboard
+import com.sector.todo.utils.observeOnce
 import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
 
 class ListFragment : Fragment(), SearchView.OnQueryTextListener {
@@ -115,10 +116,10 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
         when (item.itemId) {
             R.id.menu_delete_all -> confirmRemoval()
             R.id.menu_priority_high -> toDoViewModel.sortByHighPriority.observe(
-                this,
+                viewLifecycleOwner,
                 Observer { adapter.setData(it) })
             R.id.menu_priority_low -> toDoViewModel.sortByLowPriority.observe(
-                this,
+                viewLifecycleOwner,
                 Observer { adapter.setData(it) }
             )
         }
@@ -163,7 +164,7 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
     private fun searchThroughDatabase(query: String) {
         val searchQuery = "%$query%"
 
-        toDoViewModel.searchDatabase(searchQuery).observe(this, Observer { list ->
+        toDoViewModel.searchDatabase(searchQuery).observeOnce(viewLifecycleOwner, Observer { list ->
             list?.let {
                 adapter.setData(it)
             }
