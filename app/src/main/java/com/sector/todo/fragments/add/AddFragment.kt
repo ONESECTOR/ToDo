@@ -10,14 +10,14 @@ import androidx.navigation.fragment.findNavController
 import com.sector.todo.R
 import com.sector.todo.data.models.Priority
 import com.sector.todo.data.models.ToDoData
-import kotlinx.android.synthetic.main.row_layout.view.*
 import com.sector.todo.data.viewmodel.ToDoViewModel
 import com.sector.todo.databinding.FragmentAddBinding
 import com.sector.todo.fragments.SharedViewModel
 
 class AddFragment : Fragment() {
 
-    private lateinit var binding: FragmentAddBinding
+    private var _binding: FragmentAddBinding? = null
+    private val binding get() = _binding!!
 
     private val toDoViewModel: ToDoViewModel by viewModels()
     private val sharedViewModel: SharedViewModel by viewModels()
@@ -26,7 +26,7 @@ class AddFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentAddBinding.inflate(inflater, container, false)
+        _binding = FragmentAddBinding.inflate(inflater, container, false)
 
         setHasOptionsMenu(true)
 
@@ -78,5 +78,10 @@ class AddFragment : Fragment() {
                 Toast.makeText(requireContext(), "Please fill out all fields!", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
